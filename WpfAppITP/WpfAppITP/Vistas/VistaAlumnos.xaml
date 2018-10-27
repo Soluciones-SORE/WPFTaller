@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="WpfAppITP.Vistas.VistaAlumnos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAppITP.Vistas"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Label Margin="3" Content="Nombre:"
+                   FontSize="25" Foreground="Black"
+                   FontFamily="Arial"/>
+            <TextBox Margin="3" Width="Auto"
+                     Height="45" FontSize="25"
+                     SpellCheck.IsEnabled="True"
+                     Language="es-ES" 
+                     ToolTip="Ingrese el nombre completo"
+                     Text="{Binding Nombre}"
+                     x:Name="nom"/>
+            <Label Margin="3" Content="Correo:"
+                   FontSize="25" Foreground="Black"
+                   FontFamily="Arial"/>
+            <TextBox Margin="3" Width="Auto"
+                     Height="45" FontSize="25"
+                     SpellCheck.IsEnabled="True"
+                     Language="es-ES" 
+                     ToolTip="Ingrese el correo electronico"
+                     Text="{Binding Correo}"
+                     x:Name="cor"
+                     />
+            <Label Margin="3" Content="Telefono:"
+                   FontSize="25" Foreground="Black"
+                   FontFamily="Arial"/>
+            <TextBox Margin="3" Width="Auto"
+                     Height="45" FontSize="25"
+                     SpellCheck.IsEnabled="True"
+                     Language="es-ES" 
+                     ToolTip="Ingrese el Telefono"
+                     Text="{Binding Telefono}"
+                     x:Name="tel"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Envia" Width="180"
+                        HorizontalAlignment="Left"
+                        Margin="3"
+                        Padding="10"/>
+                <Button Content="Consulta" Width="180"
+                        HorizontalAlignment="Right"
+                        Margin="3"
+                        Padding="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Modifica" Width="180"
+                        HorizontalAlignment="Left"
+                        Margin="3"
+                        Padding="10"
+                        Click="Button_Click"/>
+                <Button Content="Elimina" Width="180"
+                        HorizontalAlignment="Right"
+                        Margin="3"
+                        Padding="10"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="0">
+            <ListView x:Name="ListaAlumnos"
+                      ItemsSource="{Binding Alumnos}"
+                      ItemTemplate="{StaticResource PlantillaAlumnos}"
+                      MouseDoubleClick="ListaAlumnos_MouseDoubleClick"
+                      >
+                
+            </ListView>
+        </StackPanel>
+    </Grid>
+</UserControl>

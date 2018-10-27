@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfAppITP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppITP"
+        mc:Ignorable="d"
+        Title="CursoItp" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!---->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0"
+              Background="Gray">
+          <!--  
+            <Button Content="saluda" Click="Button_Click" Width="100"></Button>
+            -->
+            <Menu FontSize="20">
+                <MenuItem Header="Inicio">
+                    <MenuItem.Icon>
+                        <Image Source="Imagenes/10.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Acerca de">
+                        <MenuItem.Icon>
+                            <Image Source="Imagenes/2.png"
+                                   Width="15" Height="15"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    </MenuItem>
+                <MenuItem Header="Alumnos">
+                    <MenuItem Header="Administrar" Click="MenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Imagenes/30.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                
+            </Menu>   
+         </Grid>
+        <Grid Grid.Column="0" Grid.Row="1"
+              Background="WhiteSmoke" 
+              x:Name="aqui_van_alumnos"/>
+        
+
+    </Grid>
+</Window>
